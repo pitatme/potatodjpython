@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block tite %}
+    Главная
+{% endblock %}
+
+{% block con %}
+    <h2 class="text-center">Главная страница</h2>  
+    <hr>  
+    <div style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
+        {% for product in data %}
+        <a href="{% url 'product_detail' product.id %}" class="shadow-sm p-3 bg-body rounded rounded-2 border border-light border-2 btn-light" style="text-decoration: none; cursor: pointer; margin: 10px;">
+             <div style="width: 250px; height: 250px; ">
+                <img src="{{ product.image.url }}" alt="" style="height: 250px; width: 250px;; object-fit: contain;">
+            </div>
+            <div class="text-dark" style="width: 250px;">
+                <h3  style="margin-top: 5px;">{{ product.name }}</h3>
+                <h4 style="padding-left: 8px ; color: rgb(2, 117, 29);">{{ product.price }}</h4>
+                <p class="text-secondary" style="padding-left: 8px; margin-bottom: 0; overflow-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 3;-webkit-box-orient: vertical;overflow: hidden; line-height: 160%;">{{ product.description }}</p>
+            </div>
+        </a>  
+        {% endfor %} 
+    </div>
+    
+    <p style="margin-top: 40px;">Котики — это удивительные существа, которые своим присутствием способны сделать любой день ярче. Они не просто животные, а настоящие источники тепла и уюта. В их мягком и грациозном теле скрыта бесконечная загадка, не поддающаяся логике и расчету. В их глазах таится мир, где нет ни забот, ни спешки, а только мирное существование, полное наблюдений и невыразимого спокойствия. Они учат нас важным жизненным урокам, не открывая рта. Кошка никогда не будет торопиться, она живет в моменте, полностью погруженная в свое восприятие окружающего мира.
+
+Когда котик смотрит на тебя своими нежными глазами, кажется, что он не просто животное, а мудрый наставник, который зашел в этот мир, чтобы напомнить тебе о простых радостях жизни. Он не требует многого — немного внимания, заботы, и он даст в ответ свой безмолвный комплимент в виде мягкого мурчания. В его мире все достаточно, чтобы быть счастливым, и если бы каждый из нас мог научиться у котиков так же просто и искренне наслаждаться жизнью, мир стал бы гораздо более гармоничным местом.
+    </p>
+{% endblock %}

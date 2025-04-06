@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Profile {% endblock title %}</title>
+</head>
+<body>
+    {% block con %}
+    <!-- <div class="d-flex "> -->
+        <h2>Добро пожаловать {{ user }}</h2>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-primary">Выйти</button>
+            <a href="{% url 'create' %}" class="btn btn-outline-primary ms-3">Добавить</a>
+        </form>
+        
+        
+    <!-- </div> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    {% endblock con %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block con %}
+<div class="container">
+    <h2>Войти в аккаунт</h2>
+    <hr>
+    {% if form.errors %}
+        <p>{{ form.errors.error }}</p>
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Войти</button>
+    </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
